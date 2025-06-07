@@ -1,5 +1,4 @@
 
-import { Button } from "@/components/ui/button";
 import { Award, Clock, Users, Briefcase } from "lucide-react";
 
 export const About = () => {
@@ -19,7 +18,7 @@ export const About = () => {
               <h2 className="text-3xl md:text-5xl font-bold">
                 Sobre a
                 <span className="bg-gradient-to-r from-pink-500 to-orange-400 bg-clip-text text-transparent">
-                  {" "}Agência Chave
+                  {" "}Chave
                 </span>
               </h2>
               <p className="text-lg text-muted-foreground leading-relaxed">
@@ -32,32 +31,6 @@ export const About = () => {
                 ajudamos empresas a tomar decisões mais inteligentes e alcançar resultados extraordinários.
               </p>
             </div>
-
-            <div className="space-y-4">
-              <h3 className="text-xl font-semibold">Nossa Metodologia:</h3>
-              <ul className="space-y-2">
-                <li className="flex items-center gap-3">
-                  <div className="w-2 h-2 bg-gradient-to-r from-pink-500 to-orange-400 rounded-full"></div>
-                  <span>Diagnóstico completo da estrutura de dados atual</span>
-                </li>
-                <li className="flex items-center gap-3">
-                  <div className="w-2 h-2 bg-gradient-to-r from-pink-500 to-orange-400 rounded-full"></div>
-                  <span>Desenvolvimento de dashboard personalizados</span>
-                </li>
-                <li className="flex items-center gap-3">
-                  <div className="w-2 h-2 bg-gradient-to-r from-pink-500 to-orange-400 rounded-full"></div>
-                  <span>Treinamento da equipe interna</span>
-                </li>
-                <li className="flex items-center gap-3">
-                  <div className="w-2 h-2 bg-gradient-to-r from-pink-500 to-orange-400 rounded-full"></div>
-                  <span>Suporte contínuo e otimizações</span>
-                </li>
-              </ul>
-            </div>
-
-            <Button size="lg" className="bg-gradient-to-r from-pink-500 to-orange-400 hover:from-pink-600 hover:to-orange-500">
-              Conheça Nossa História
-            </Button>
           </div>
 
           <div className="space-y-8">

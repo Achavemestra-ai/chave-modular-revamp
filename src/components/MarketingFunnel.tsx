@@ -14,7 +14,7 @@ export const MarketingFunnel = () => {
             Se você não segui-lo, ela não vai sair do lugar
           </p>
           <p className="text-2xl font-bold text-pink-500 mb-16">
-            Método A Chave
+            Metodologia Chave Mestra
           </p>
 
           <div className="relative mb-16">
@@ -23,7 +23,7 @@ export const MarketingFunnel = () => {
                 <div className="w-24 h-24 bg-pink-500 rounded-full flex items-center justify-center mx-auto mb-4">
                   <Megaphone className="w-12 h-12 text-white" />
                 </div>
-                <h3 className="text-lg font-bold text-white mb-2">Aquisição</h3>
+                <h3 className="text-lg font-bold text-white mb-2">Captura</h3>
                 <p className="text-gray-300">Atrair a atenção do público.</p>
               </div>
 
@@ -31,7 +31,7 @@ export const MarketingFunnel = () => {
                 <div className="w-24 h-24 bg-pink-500 rounded-full flex items-center justify-center mx-auto mb-4">
                   <Handshake className="w-12 h-12 text-white" />
                 </div>
-                <h3 className="text-lg font-bold text-white mb-2">Engajamento</h3>
+                <h3 className="text-lg font-bold text-white mb-2">Aquecimento</h3>
                 <p className="text-gray-300">Construir confiança e interesse.</p>
               </div>
 
@@ -39,7 +39,7 @@ export const MarketingFunnel = () => {
                 <div className="w-24 h-24 bg-pink-500 rounded-full flex items-center justify-center mx-auto mb-4">
                   <BarChart className="w-12 h-12 text-white" />
                 </div>
-                <h3 className="text-lg font-bold text-white mb-2">Monetização</h3>
+                <h3 className="text-lg font-bold text-white mb-2">Conversão</h3>
                 <p className="text-gray-300">Realizar vendas.</p>
               </div>
 
@@ -47,7 +47,7 @@ export const MarketingFunnel = () => {
                 <div className="w-24 h-24 bg-pink-500 rounded-full flex items-center justify-center mx-auto mb-4">
                   <RefreshCw className="w-12 h-12 text-white" />
                 </div>
-                <h3 className="text-lg font-bold text-white mb-2">Retenção</h3>
+                <h3 className="text-lg font-bold text-white mb-2">Fidelizar</h3>
                 <p className="text-gray-300">Manter os clientes comprando.</p>
               </div>
             </div>
@@ -55,7 +55,7 @@ export const MarketingFunnel = () => {
 
           <Button 
             size="lg" 
-            className="bg-green-600 hover:bg-green-700 text-white px-8 py-6 text-lg"
+            className="bg-gradient-to-r from-pink-500 to-orange-400 hover:from-pink-600 hover:to-orange-500 text-white px-8 py-6 text-lg"
           >
             Quero ver isso na prática
           </Button>

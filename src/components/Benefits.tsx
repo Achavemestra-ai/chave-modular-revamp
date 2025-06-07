@@ -36,19 +36,26 @@ export const Benefits = () => {
   ];
 
   return (
-    <section className="py-20 bg-gradient-to-b from-background to-pink-50/10">
+    <section id="benefits" className="py-20 bg-gradient-to-b from-background to-pink-50/10">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-5xl font-bold mb-6">
             Por que escolher a
             <span className="bg-gradient-to-r from-pink-500 to-orange-400 bg-clip-text text-transparent">
-              {" "}Agência Chave?
+              {" "}Chave?
             </span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Somos especialistas em transformar dados em vantagem competitiva. 
-            Conheça os diferenciais que fazem da Chave a escolha certa para sua empresa.
-          </p>
+          <div className="text-lg text-muted-foreground max-w-4xl mx-auto space-y-4">
+            <p>
+              Tenha um braço a mais para ajudar seu time ou terceirize todo seu marketing com A Chave, dessa forma você não se preocupa com contratação, gestão desse time, riscos trabalhistas e outras burocracias.
+            </p>
+            <p>
+              Todos esses serviços são divididos em planos. Você pode ajustar conforme sua disponibilidade de investimento. O importante é não desistir de investir no que vai transformar a realidade do seu negócio.
+            </p>
+            <p>
+              Somos especialistas em transformar dados em vantagem competitiva. Conheça os diferenciais que fazem da Chave a escolha certa para sua empresa.
+            </p>
+          </div>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">

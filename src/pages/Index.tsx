@@ -4,7 +4,6 @@ import { LeadForm } from "@/components/LeadForm";
 import { Hero } from "@/components/Hero";
 import { Process } from "@/components/Process";
 import { MarketingFunnel } from "@/components/MarketingFunnel";
-import { ValueProposition } from "@/components/ValueProposition";
 import { Benefits } from "@/components/Benefits";
 import { Services } from "@/components/Services";
 import { About } from "@/components/About";
@@ -20,11 +19,10 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background">
       <Header />
-      <LeadForm />
       <Hero />
+      <LeadForm />
       <Process />
       <MarketingFunnel />
-      <ValueProposition />
       <Benefits />
       <Services />
       <About />
