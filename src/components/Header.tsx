@@ -7,6 +7,13 @@ import { ThemeToggle } from "./ThemeToggle";
 export const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+  const scrollToForm = () => {
+    const formElement = document.getElementById('lead-form');
+    if (formElement) {
+      formElement.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <header className="fixed top-0 w-full bg-background/95 backdrop-blur-sm border-b border-border z-50">
       <div className="container mx-auto px-4 py-4">
@@ -29,8 +36,11 @@ export const Header = () => {
             <a href="#contato" className="text-foreground hover:text-primary transition-colors">Contato</a>
             <div className="flex items-center space-x-2">
               <ThemeToggle />
-              <Button className="bg-gradient-to-r from-pink-500 to-orange-400 hover:from-pink-600 hover:to-orange-500">
-                Fale Conosco
+              <Button 
+                onClick={scrollToForm}
+                className="bg-gradient-to-r from-pink-500 to-orange-400 hover:from-pink-600 hover:to-orange-500"
+              >
+                Solicitar Consultoria
               </Button>
             </div>
           </nav>
@@ -53,8 +63,11 @@ export const Header = () => {
               <a href="#sobre" className="text-foreground hover:text-primary transition-colors">Sobre</a>
               <a href="#servicos" className="text-foreground hover:text-primary transition-colors">Serviços</a>
               <a href="#contato" className="text-foreground hover:text-primary transition-colors">Contato</a>
-              <Button className="bg-gradient-to-r from-pink-500 to-orange-400 hover:from-pink-600 hover:to-orange-500 w-full">
-                Fale Conosco
+              <Button 
+                onClick={scrollToForm}
+                className="bg-gradient-to-r from-pink-500 to-orange-400 hover:from-pink-600 hover:to-orange-500 w-full"
+              >
+                Solicitar Consultoria
               </Button>
             </div>
           </nav>

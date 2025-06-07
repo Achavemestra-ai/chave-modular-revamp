@@ -2,6 +2,13 @@
 import { Button } from "@/components/ui/button";
 
 export const FinalCTA = () => {
+  const scrollToForm = () => {
+    const formElement = document.getElementById('lead-form');
+    if (formElement) {
+      formElement.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <section className="py-20 bg-gradient-to-r from-pink-500 via-purple-500 to-orange-400">
       <div className="container mx-auto px-4">
@@ -15,6 +22,7 @@ export const FinalCTA = () => {
           </p>
 
           <Button 
+            onClick={scrollToForm}
             size="lg" 
             className="bg-white text-pink-500 hover:bg-gray-100 px-12 py-6 text-xl font-bold"
           >
