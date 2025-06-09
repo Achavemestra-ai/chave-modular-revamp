@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { 
@@ -12,10 +13,13 @@ import {
   Instagram,
   Facebook,
   Youtube,
-  Heart
+  X
 } from "lucide-react";
+import { useState, useEffect } from "react";
 
 export const Services = () => {
+  const [currentSlide, setCurrentSlide] = useState(0);
+  
   const services = [
     {
       icon: Rocket,
@@ -33,7 +37,7 @@ export const Services = () => {
         { icon: Instagram, className: "bg-gradient-to-r from-purple-500 to-pink-500" },
         { icon: Facebook, className: "bg-blue-600" },
         { icon: Youtube, className: "bg-red-600" },
-        { icon: Heart, className: "bg-red-500" } // Pinterest replacement
+        { icon: X, className: "bg-black" } // X (Twitter) replacement
       ]
     },
     {
@@ -103,7 +107,7 @@ export const Services = () => {
         "Acesse os dados a qualquer momento, em qualquer dispositivo"
       ],
       mockupImages: [
-        "/lovable-uploads/a83cfca6-3d64-4695-afaa-41236747d352.png"
+        "/lovable-uploads/4c597074-4b59-47c0-8f40-ff4b8ead25db.png"
       ]
     },
     {
@@ -117,10 +121,19 @@ export const Services = () => {
         "Seu processo comercial sendo analisado e otimizado por nós"
       ],
       mockupImages: [
-        "/lovable-uploads/4c597074-4b59-47c0-8f40-ff4b8ead25db.png"
+        "/lovable-uploads/a83cfca6-3d64-4695-afaa-41236747d352.png"
       ]
     }
   ];
+
+  // Autoplay functionality
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % services.length);
+    }, 3330); // 3.33 seconds
+
+    return () => clearInterval(interval);
+  }, [services.length]);
 
   return (
     <section id="servicos" className="py-20 bg-background">
@@ -143,7 +156,13 @@ export const Services = () => {
         </div>
 
         <div className="max-w-6xl mx-auto">
-          <Carousel className="w-full">
+          <Carousel 
+            className="w-full"
+            opts={{
+              loop: true,
+              startIndex: currentSlide
+            }}
+          >
             <CarouselContent className="-ml-2 md:-ml-4">
               {services.map((service, index) => (
                 <CarouselItem key={index} className="pl-2 md:pl-4 basis-full">
@@ -209,7 +228,9 @@ export const Services = () => {
               {services.map((_, index) => (
                 <div 
                   key={index} 
-                  className={`w-2 h-2 rounded-full ${index === 0 ? 'bg-pink-500' : 'bg-gray-300'}`}
+                  className={`w-2 h-2 rounded-full transition-colors duration-300 ${
+                    index === currentSlide ? 'bg-pink-500' : 'bg-gray-300'
+                  }`}
                 />
               ))}
             </div>
