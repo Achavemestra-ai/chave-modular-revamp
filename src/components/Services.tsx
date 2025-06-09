@@ -15,9 +15,11 @@ import {
   X
 } from "lucide-react";
 import { useState, useEffect } from "react";
+import type { CarouselApi } from "@/components/ui/carousel";
 
 export const Services = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [api, setApi] = useState<CarouselApi>();
   
   const services = [
     {
@@ -128,11 +130,29 @@ export const Services = () => {
   // Autoplay functionality
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % services.length);
+      setCurrentSlide((prev) => {
+        const nextSlide = (prev + 1) % services.length;
+        if (api) {
+          api.scrollTo(nextSlide);
+        }
+        return nextSlide;
+      });
     }, 3330); // 3.33 seconds
 
     return () => clearInterval(interval);
-  }, [services.length]);
+  }, [services.length, api]);
+
+  // Sync with carousel API
+  useEffect(() => {
+    if (!api) return;
+
+    const onSelect = () => {
+      setCurrentSlide(api.selectedScrollSnap());
+    };
+
+    api.on("select", onSelect);
+    return () => api.off("select", onSelect);
+  }, [api]);
 
   return (
     <section id="servicos" className="py-20 bg-background">
@@ -157,9 +177,9 @@ export const Services = () => {
         <div className="max-w-6xl mx-auto">
           <Carousel 
             className="w-full"
+            setApi={setApi}
             opts={{
               loop: true,
-              startIndex: currentSlide,
               duration: 25
             }}
           >
