@@ -159,13 +159,14 @@ export const Services = () => {
             className="w-full"
             opts={{
               loop: true,
-              startIndex: currentSlide
+              startIndex: currentSlide,
+              duration: 25
             }}
           >
-            <CarouselContent className="-ml-2 md:-ml-4">
+            <CarouselContent className="-ml-2 md:-ml-4 transition-transform duration-500 ease-in-out">
               {services.map((service, index) => (
                 <CarouselItem key={index} className="pl-2 md:pl-4 basis-full">
-                  <div className="bg-card border border-border rounded-3xl p-8 min-h-[500px] flex">
+                  <div className="bg-card border border-border rounded-3xl p-8 min-h-[500px] flex transform transition-all duration-500 ease-in-out">
                     <div className="flex-1 pr-8">
                       <div className="mb-6">
                         <div className="w-16 h-16 bg-pink-500 rounded-2xl flex items-center justify-center mb-4">
