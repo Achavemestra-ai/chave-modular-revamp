@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { 
@@ -236,7 +235,7 @@ export const Services = () => {
             </div>
           </div>
           <Button className="bg-gradient-to-r from-pink-500 to-orange-400 hover:from-pink-600 hover:to-orange-500 text-white px-8 py-6 text-lg">
-            Conheça todos os nossos serviços
+            Quero um marketing sob medida
           </Button>
         </div>
       </div>
