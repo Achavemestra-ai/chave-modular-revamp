@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { 
@@ -8,12 +7,12 @@ import {
   LifeBuoy, 
   BarChart3, 
   DollarSign,
-  TikTok,
+  Hash,
   Linkedin,
   Instagram,
   Facebook,
   Youtube,
-  Pinterest
+  Heart
 } from "lucide-react";
 
 export const Services = () => {
@@ -29,12 +28,12 @@ export const Services = () => {
         "Tenha mais previsibilidade e mensure o retorno do seu investimento"
       ],
       socialIcons: [
-        { icon: TikTok, className: "bg-black" },
+        { icon: Hash, className: "bg-black" }, // TikTok replacement
         { icon: Linkedin, className: "bg-blue-600" },
         { icon: Instagram, className: "bg-gradient-to-r from-purple-500 to-pink-500" },
         { icon: Facebook, className: "bg-blue-600" },
         { icon: Youtube, className: "bg-red-600" },
-        { icon: Pinterest, className: "bg-red-500" }
+        { icon: Heart, className: "bg-red-500" } // Pinterest replacement
       ]
     },
     {
