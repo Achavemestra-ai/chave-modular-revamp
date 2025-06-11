@@ -24,8 +24,8 @@ export const Process = () => {
                 <span className="text-3xl font-bold text-white">2</span>
               </div>
               <p className="text-gray-300 text-lg leading-relaxed">
-                Em até 12 horas, um dos nossos especialistas fará uma ligação para 
-                agendar a reunião mais importante com você.
+                No mesmo dia um de nossos especialistas retornará o contato para 
+                agendar sua consultoria gratuita.
               </p>
             </div>
           </div>

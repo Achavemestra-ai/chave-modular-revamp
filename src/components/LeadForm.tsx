@@ -164,15 +164,15 @@ Meus dados:
                 >
                   <div className="flex items-center space-x-2">
                     <RadioGroupItem value="menos-1-ano" id="menos-1-ano" />
-                    <Label htmlFor="menos-1-ano">Menos de 1 ano</Label>
+                    <Label htmlFor="menos-1-ano" className="text-gray-800 font-medium">Menos de 1 ano</Label>
                   </div>
                   <div className="flex items-center space-x-2">
                     <RadioGroupItem value="1-3-anos" id="1-3-anos" />
-                    <Label htmlFor="1-3-anos">1 a 3 anos</Label>
+                    <Label htmlFor="1-3-anos" className="text-gray-800 font-medium">1 a 3 anos</Label>
                   </div>
                   <div className="flex items-center space-x-2">
                     <RadioGroupItem value="mais-5-anos" id="mais-5-anos" />
-                    <Label htmlFor="mais-5-anos">Mais de 5 anos</Label>
+                    <Label htmlFor="mais-5-anos" className="text-gray-800 font-medium">Mais de 5 anos</Label>
                   </div>
                 </RadioGroup>
               </div>
@@ -186,15 +186,15 @@ Meus dados:
                 >
                   <div className="flex items-center space-x-2">
                     <RadioGroupItem value="menos-5mil" id="menos-5mil" />
-                    <Label htmlFor="menos-5mil">Menos de 5mil reais</Label>
+                    <Label htmlFor="menos-5mil" className="text-gray-800 font-medium">Menos de 5mil reais</Label>
                   </div>
                   <div className="flex items-center space-x-2">
                     <RadioGroupItem value="5-10mil" id="5-10mil" />
-                    <Label htmlFor="5-10mil">5 a 10mil reais</Label>
+                    <Label htmlFor="5-10mil" className="text-gray-800 font-medium">5 a 10mil reais</Label>
                   </div>
                   <div className="flex items-center space-x-2">
                     <RadioGroupItem value="mais-10mil" id="mais-10mil" />
-                    <Label htmlFor="mais-10mil">Mais de 10 mil reais</Label>
+                    <Label htmlFor="mais-10mil" className="text-gray-800 font-medium">Mais de 10 mil reais</Label>
                   </div>
                 </RadioGroup>
               </div>
@@ -221,11 +221,11 @@ Meus dados:
                 >
                   <div className="flex items-center space-x-2">
                     <RadioGroupItem value="sim" id="marketing-sim" />
-                    <Label htmlFor="marketing-sim">Sim</Label>
+                    <Label htmlFor="marketing-sim" className="text-gray-800 font-medium">Sim</Label>
                   </div>
                   <div className="flex items-center space-x-2">
                     <RadioGroupItem value="nao" id="marketing-nao" />
-                    <Label htmlFor="marketing-nao">Não</Label>
+                    <Label htmlFor="marketing-nao" className="text-gray-800 font-medium">Não</Label>
                   </div>
                 </RadioGroup>
               </div>
