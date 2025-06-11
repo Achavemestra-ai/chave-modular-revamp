@@ -6,7 +6,7 @@ export const Testimonials = () => {
     {
       name: "Maria Silva",
       role: "CEO",
-      company: "TechCorp",
+      company: "",
       content: "A Chave transformou completamente nossa visão sobre dados. Em 3 meses, conseguimos identificar oportunidades que resultaram em 40% de aumento nas vendas.",
       rating: 5,
       avatar: "MS"
@@ -14,7 +14,7 @@ export const Testimonials = () => {
     {
       name: "João Santos",
       role: "Diretor Comercial",
-      company: "InnovaTech",
+      company: "",
       content: "O dashboard criado pela Agência Chave nos permite tomar decisões estratégicas com muito mais agilidade e precisão. Recomendo fortemente!",
       rating: 5,
       avatar: "JS"
@@ -22,7 +22,7 @@ export const Testimonials = () => {
     {
       name: "Ana Costa",
       role: "Gerente de Marketing",
-      company: "Digital Plus",
+      company: "",
       content: "Antes da Chave, tomávamos decisões baseadas em intuição. Agora, cada estratégia é respaldada por dados concretos. O ROI foi impressionante!",
       rating: 5,
       avatar: "AC"
@@ -30,7 +30,7 @@ export const Testimonials = () => {
     {
       name: "Pedro Oliveira",
       role: "CTO",
-      company: "StartupXYZ",
+      company: "",
       content: "A metodologia da Chave é excepcional. Eles não apenas entregaram as soluções, mas também capacitaram nossa equipe para ser autônoma.",
       rating: 5,
       avatar: "PO"
@@ -76,7 +76,7 @@ export const Testimonials = () => {
                 <div>
                   <div className="font-semibold">{testimonial.name}</div>
                   <div className="text-sm text-muted-foreground">
-                    {testimonial.role} • {testimonial.company}
+                    {testimonial.role}
                   </div>
                 </div>
               </div>

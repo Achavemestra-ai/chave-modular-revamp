@@ -2,6 +2,8 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { Textarea } from "@/components/ui/textarea";
+import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { useState } from "react";
 
 export const LeadForm = () => {
@@ -9,20 +11,47 @@ export const LeadForm = () => {
     name: '',
     email: '',
     phone: '',
-    company: ''
+    company: '',
+    priority: '',
+    math: '',
+    companyAge: '',
+    revenue: '',
+    segment: '',
+    digitalMarketing: ''
   });
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Aqui você pode integrar com sua API de leads
-    console.log('Dados do lead:', formData);
-    alert('Obrigado! Em breve entraremos em contato.');
+    
+    // Create WhatsApp message with form data
+    const message = `Olá! Vim através do site e gostaria de receber uma consultoria gratuita.
+
+Meus dados:
+• Nome: ${formData.name}
+• Email: ${formData.email}
+• Telefone: ${formData.phone}
+• Empresa: ${formData.company}
+• Maior prioridade para impulsionar a empresa: ${formData.priority}
+• Anos de empresa: ${formData.companyAge}
+• Faturamento mensal: ${formData.revenue}
+• Ramo/Segmento: ${formData.segment}
+• Já investiu em Marketing Digital: ${formData.digitalMarketing}`;
+
+    const whatsappUrl = `https://wa.me/5527988527452?text=${encodeURIComponent(message)}`;
+    window.open(whatsappUrl, '_blank');
   };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value
+    });
+  };
+
+  const handleRadioChange = (name: string, value: string) => {
+    setFormData({
+      ...formData,
+      [name]: value
     });
   };
 
@@ -96,6 +125,109 @@ export const LeadForm = () => {
                     placeholder="Sua empresa"
                   />
                 </div>
+              </div>
+
+              <div>
+                <Label htmlFor="priority" className="text-gray-700 font-semibold">
+                  Qual serviço você acredita ser a maior prioridade para impulsionar sua empresa num período de 7 dias?
+                </Label>
+                <Textarea
+                  id="priority"
+                  name="priority"
+                  value={formData.priority}
+                  onChange={handleChange}
+                  className="mt-2"
+                  placeholder="Descreva qual serviço seria mais importante..."
+                />
+              </div>
+
+              <div>
+                <Label htmlFor="math" className="text-gray-700 font-semibold">4+3=? *</Label>
+                <Input
+                  id="math"
+                  name="math"
+                  type="text"
+                  required
+                  value={formData.math}
+                  onChange={handleChange}
+                  className="mt-2"
+                  placeholder="Resposta"
+                />
+              </div>
+
+              <div>
+                <Label className="text-gray-700 font-semibold">Quantos anos de empresa?</Label>
+                <RadioGroup 
+                  value={formData.companyAge} 
+                  onValueChange={(value) => handleRadioChange('companyAge', value)}
+                  className="mt-2"
+                >
+                  <div className="flex items-center space-x-2">
+                    <RadioGroupItem value="menos-1-ano" id="menos-1-ano" />
+                    <Label htmlFor="menos-1-ano">Menos de 1 ano</Label>
+                  </div>
+                  <div className="flex items-center space-x-2">
+                    <RadioGroupItem value="1-3-anos" id="1-3-anos" />
+                    <Label htmlFor="1-3-anos">1 a 3 anos</Label>
+                  </div>
+                  <div className="flex items-center space-x-2">
+                    <RadioGroupItem value="mais-5-anos" id="mais-5-anos" />
+                    <Label htmlFor="mais-5-anos">Mais de 5 anos</Label>
+                  </div>
+                </RadioGroup>
+              </div>
+
+              <div>
+                <Label className="text-gray-700 font-semibold">Qual média de faturamento mensal?</Label>
+                <RadioGroup 
+                  value={formData.revenue} 
+                  onValueChange={(value) => handleRadioChange('revenue', value)}
+                  className="mt-2"
+                >
+                  <div className="flex items-center space-x-2">
+                    <RadioGroupItem value="menos-5mil" id="menos-5mil" />
+                    <Label htmlFor="menos-5mil">Menos de 5mil reais</Label>
+                  </div>
+                  <div className="flex items-center space-x-2">
+                    <RadioGroupItem value="5-10mil" id="5-10mil" />
+                    <Label htmlFor="5-10mil">5 a 10mil reais</Label>
+                  </div>
+                  <div className="flex items-center space-x-2">
+                    <RadioGroupItem value="mais-10mil" id="mais-10mil" />
+                    <Label htmlFor="mais-10mil">Mais de 10 mil reais</Label>
+                  </div>
+                </RadioGroup>
+              </div>
+
+              <div>
+                <Label htmlFor="segment" className="text-gray-700 font-semibold">Qual Ramo/Segmento da Empresa?</Label>
+                <Input
+                  id="segment"
+                  name="segment"
+                  type="text"
+                  value={formData.segment}
+                  onChange={handleChange}
+                  className="mt-2"
+                  placeholder="Ex: E-commerce, Consultoria, Saúde..."
+                />
+              </div>
+
+              <div>
+                <Label className="text-gray-700 font-semibold">Já investiu em Marketing Digital na sua empresa?</Label>
+                <RadioGroup 
+                  value={formData.digitalMarketing} 
+                  onValueChange={(value) => handleRadioChange('digitalMarketing', value)}
+                  className="mt-2"
+                >
+                  <div className="flex items-center space-x-2">
+                    <RadioGroupItem value="sim" id="marketing-sim" />
+                    <Label htmlFor="marketing-sim">Sim</Label>
+                  </div>
+                  <div className="flex items-center space-x-2">
+                    <RadioGroupItem value="nao" id="marketing-nao" />
+                    <Label htmlFor="marketing-nao">Não</Label>
+                  </div>
+                </RadioGroup>
               </div>
 
               <Button 

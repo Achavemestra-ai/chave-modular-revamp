@@ -8,10 +8,14 @@ export const Certifications = () => {
             Reconhecimento de Mercado
           </h2>
           
-          <div className="grid md:grid-cols-3 gap-12">
+          <div className="grid md:grid-cols-2 gap-12">
             <div className="text-center">
-              <div className="w-24 h-24 bg-gradient-to-r from-blue-500 to-green-500 rounded-full flex items-center justify-center mx-auto mb-6">
-                <span className="text-white font-bold text-xl">G</span>
+              <div className="w-24 h-24 bg-white rounded-full flex items-center justify-center mx-auto mb-6">
+                <img 
+                  src="https://pages.greatpages.com.br/lp.v4company.com-assessoria-bi-modular/1734034059/imagens/desktop/381993_1_17011148396564f3d795ff6316885457.svg" 
+                  alt="Google Partner Premier"
+                  className="w-16 h-16"
+                />
               </div>
               <h3 className="text-xl font-bold text-white mb-4">Google Partner Premier</h3>
               <p className="text-gray-300 leading-relaxed">
@@ -23,8 +27,12 @@ export const Certifications = () => {
             </div>
 
             <div className="text-center">
-              <div className="w-24 h-24 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-6">
-                <span className="text-white font-bold text-xl">M</span>
+              <div className="w-24 h-24 bg-white rounded-full flex items-center justify-center mx-auto mb-6">
+                <img 
+                  src="https://pages.greatpages.com.br/lp.v4company.com-assessoria-bi-modular/1734034059/imagens/desktop/381993_1_17011148396564f3d795c9c563326200.svg" 
+                  alt="Meta Business Partner"
+                  className="w-16 h-16"
+                />
               </div>
               <h3 className="text-xl font-bold text-white mb-4">Meta Business Partner</h3>
               <p className="text-gray-300 leading-relaxed">
@@ -32,17 +40,6 @@ export const Certifications = () => {
                 as empresas que o possuem são especialistas em marketing digital da Meta e estão 
                 altamente capacitadas para ajudar as empresas a alcançar seus objetivos. De acordo 
                 com dados da Meta, apenas 1% das empresas possuem esse certificado. Estamos nessa lista.
-              </p>
-            </div>
-
-            <div className="text-center">
-              <div className="w-24 h-24 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center mx-auto mb-6">
-                <span className="text-white font-bold text-xl">T</span>
-              </div>
-              <h3 className="text-xl font-bold text-white mb-4">Parceiro Diamante</h3>
-              <p className="text-gray-300 leading-relaxed">
-                O Parceiro Diamante Tray é o nível mais alto do programa de parceria da Tray, 
-                uma das maiores plataforma de e-commerce brasileira.
               </p>
             </div>
           </div>

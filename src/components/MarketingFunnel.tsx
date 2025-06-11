@@ -3,6 +3,13 @@ import { Button } from "@/components/ui/button";
 import { Megaphone, Handshake, BarChart, RefreshCw } from "lucide-react";
 
 export const MarketingFunnel = () => {
+  const scrollToForm = () => {
+    const formElement = document.getElementById('lead-form');
+    if (formElement) {
+      formElement.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <section className="py-20 bg-black">
       <div className="container mx-auto px-4">
@@ -23,7 +30,7 @@ export const MarketingFunnel = () => {
                 <div className="w-24 h-24 bg-pink-500 rounded-full flex items-center justify-center mx-auto mb-4">
                   <Megaphone className="w-12 h-12 text-white" />
                 </div>
-                <h3 className="text-lg font-bold text-white mb-2">Captura</h3>
+                <h3 className="text-lg font-bold text-white mb-2">Capturar</h3>
                 <p className="text-gray-300">Atrair a atenção do público.</p>
               </div>
 
@@ -31,7 +38,7 @@ export const MarketingFunnel = () => {
                 <div className="w-24 h-24 bg-pink-500 rounded-full flex items-center justify-center mx-auto mb-4">
                   <Handshake className="w-12 h-12 text-white" />
                 </div>
-                <h3 className="text-lg font-bold text-white mb-2">Aquecimento</h3>
+                <h3 className="text-lg font-bold text-white mb-2">Aquecer</h3>
                 <p className="text-gray-300">Construir confiança e interesse.</p>
               </div>
 
@@ -39,7 +46,7 @@ export const MarketingFunnel = () => {
                 <div className="w-24 h-24 bg-pink-500 rounded-full flex items-center justify-center mx-auto mb-4">
                   <BarChart className="w-12 h-12 text-white" />
                 </div>
-                <h3 className="text-lg font-bold text-white mb-2">Conversão</h3>
+                <h3 className="text-lg font-bold text-white mb-2">Vender</h3>
                 <p className="text-gray-300">Realizar vendas.</p>
               </div>
 
@@ -54,6 +61,7 @@ export const MarketingFunnel = () => {
           </div>
 
           <Button 
+            onClick={scrollToForm}
             size="lg" 
             className="bg-gradient-to-r from-pink-500 to-orange-400 hover:from-pink-600 hover:to-orange-500 text-white px-8 py-6 text-lg"
           >

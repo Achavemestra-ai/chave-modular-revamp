@@ -10,37 +10,50 @@ export const Hero = () => {
     }
   };
 
+  const scrollToForm = () => {
+    const formElement = document.getElementById('lead-form');
+    if (formElement) {
+      formElement.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <section className="min-h-screen bg-black text-white relative overflow-hidden">
       {/* Orbital Animation Background */}
       <div className="absolute inset-0 pointer-events-none">
-        {/* Central star/sun */}
+        {/* Central triangle */}
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-          <div className="w-4 h-4 bg-gradient-to-r from-pink-500 to-orange-400 rounded-full"></div>
+          <div className="w-0 h-0 border-l-[8px] border-r-[8px] border-b-[12px] border-l-transparent border-r-transparent border-b-gradient-to-r border-b-pink-500"></div>
+          <div 
+            className="w-0 h-0 border-l-[8px] border-r-[8px] border-b-[12px] border-l-transparent border-r-transparent"
+            style={{
+              borderBottomColor: '#ec4899'
+            }}
+          ></div>
         </div>
         
-        {/* Orbital rings */}
+        {/* Orbital rings - increased size */}
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-          <div className="w-32 h-32 border border-pink-500/20 rounded-full animate-spin" style={{ animationDuration: '20s' }}>
-            <div className="w-2 h-2 bg-pink-500 rounded-full absolute top-0 left-1/2 transform -translate-x-1/2"></div>
+          <div className="w-64 h-64 border border-pink-500/20 rounded-full animate-spin" style={{ animationDuration: '20s' }}>
+            <div className="w-3 h-3 bg-pink-500 rounded-full absolute top-0 left-1/2 transform -translate-x-1/2"></div>
           </div>
         </div>
         
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-          <div className="w-48 h-48 border border-orange-400/15 rounded-full animate-spin" style={{ animationDuration: '30s' }}>
-            <div className="w-1.5 h-1.5 bg-orange-400 rounded-full absolute top-0 left-1/2 transform -translate-x-1/2"></div>
+          <div className="w-80 h-80 border border-orange-400/15 rounded-full animate-spin" style={{ animationDuration: '30s' }}>
+            <div className="w-2.5 h-2.5 bg-orange-400 rounded-full absolute top-0 left-1/2 transform -translate-x-1/2"></div>
           </div>
         </div>
         
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-          <div className="w-64 h-64 border border-pink-300/10 rounded-full animate-spin" style={{ animationDuration: '40s' }}>
-            <div className="w-1 h-1 bg-pink-300 rounded-full absolute top-0 left-1/2 transform -translate-x-1/2"></div>
+          <div className="w-96 h-96 border border-pink-300/10 rounded-full animate-spin" style={{ animationDuration: '40s' }}>
+            <div className="w-2 h-2 bg-pink-300 rounded-full absolute top-0 left-1/2 transform -translate-x-1/2"></div>
           </div>
         </div>
         
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-          <div className="w-80 h-80 border border-orange-200/8 rounded-full animate-spin" style={{ animationDuration: '50s' }}>
-            <div className="w-0.5 h-0.5 bg-orange-200 rounded-full absolute top-0 left-1/2 transform -translate-x-1/2"></div>
+          <div className="w-[28rem] h-[28rem] border border-orange-200/8 rounded-full animate-spin" style={{ animationDuration: '50s' }}>
+            <div className="w-1.5 h-1.5 bg-orange-200 rounded-full absolute top-0 left-1/2 transform -translate-x-1/2"></div>
           </div>
         </div>
       </div>
@@ -55,7 +68,7 @@ export const Hero = () => {
           
           <div className="mt-12">
             <Button 
-              onClick={scrollToBenefits}
+              onClick={scrollToForm}
               size="lg" 
               className="bg-gradient-to-r from-pink-500 to-orange-400 hover:from-pink-600 hover:to-orange-500 text-white px-12 py-6 text-xl font-bold"
             >
@@ -79,7 +92,7 @@ export const Hero = () => {
               </div>
             </div>
             <p className="text-gray-300 text-lg">
-              mais de 15.500 empresas já tomaram essa decisão
+              Chegou o momento de virar A Chave da sua empresa para novos horizontes
             </p>
           </div>
         </div>

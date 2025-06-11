@@ -5,7 +5,7 @@ export const Footer = () => {
   return (
     <footer id="contato" className="bg-gray-900 text-white py-16">
       <div className="container mx-auto px-4">
-        <div className="grid lg:grid-cols-4 gap-8">
+        <div className="grid lg:grid-cols-3 gap-8">
           <div className="space-y-6">
             <div className="flex items-center space-x-2">
               <img 
@@ -35,26 +35,12 @@ export const Footer = () => {
           </div>
 
           <div>
-            <h3 className="text-xl font-semibold mb-6">Serviços</h3>
-            <ul className="space-y-3 text-gray-300">
-              <li><a href="#" className="hover:text-pink-400 transition-colors">Dashboard Executivo</a></li>
-              <li><a href="#" className="hover:text-pink-400 transition-colors">Integração de Dados</a></li>
-              <li><a href="#" className="hover:text-pink-400 transition-colors">Automação de Relatórios</a></li>
-              <li><a href="#" className="hover:text-pink-400 transition-colors">Treinamento de Equipe</a></li>
-              <li><a href="#" className="hover:text-pink-400 transition-colors">BI Mobile</a></li>
-              <li><a href="#" className="hover:text-pink-400 transition-colors">Migração para Cloud</a></li>
-            </ul>
-          </div>
-
-          <div>
-            <h3 className="text-xl font-semibold mb-6">Empresa</h3>
+            <h3 className="text-xl font-semibold mb-6">Links Úteis</h3>
             <ul className="space-y-3 text-gray-300">
               <li><a href="#sobre" className="hover:text-pink-400 transition-colors">Sobre Nós</a></li>
-              <li><a href="#" className="hover:text-pink-400 transition-colors">Nossa Equipe</a></li>
-              <li><a href="#" className="hover:text-pink-400 transition-colors">Cases de Sucesso</a></li>
-              <li><a href="#" className="hover:text-pink-400 transition-colors">Blog</a></li>
-              <li><a href="#" className="hover:text-pink-400 transition-colors">Carreira</a></li>
+              <li><a href="#servicos" className="hover:text-pink-400 transition-colors">Serviços</a></li>
               <li><a href="#" className="hover:text-pink-400 transition-colors">Política de Privacidade</a></li>
+              <li><a href="#" className="hover:text-pink-400 transition-colors">Termos de Uso</a></li>
             </ul>
           </div>
 
@@ -63,18 +49,26 @@ export const Footer = () => {
             <div className="space-y-4 text-gray-300">
               <div className="flex items-center gap-3">
                 <Phone className="w-5 h-5 text-pink-400" />
-                <span>(11) 9999-9999</span>
+                <a 
+                  href="https://wa.me/5527988527452" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="hover:text-pink-400 transition-colors"
+                >
+                  WhatsApp
+                </a>
               </div>
               <div className="flex items-center gap-3">
                 <Mail className="w-5 h-5 text-pink-400" />
-                <span>contato@agenciachave.com.br</span>
+                <span>contato@achave-ia.com.br</span>
               </div>
               <div className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 text-pink-400 mt-1" />
                 <span>
-                  Av. Paulista, 1000<br />
-                  São Paulo - SP<br />
-                  CEP: 01310-100
+                  Avenida Nossa Senhora da Penha 2598<br />
+                  Santa Luíza<br />
+                  Vitória ES<br />
+                  29045-402
                 </span>
               </div>
             </div>

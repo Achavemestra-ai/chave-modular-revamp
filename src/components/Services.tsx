@@ -1,5 +1,5 @@
+
 import { Button } from "@/components/ui/button";
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { 
   Rocket, 
   Palette, 
@@ -12,15 +12,22 @@ import {
   Instagram,
   Facebook,
   Youtube,
-  X
+  X,
+  ChevronLeft,
+  ChevronRight
 } from "lucide-react";
 import { useState, useEffect } from "react";
-import type { CarouselApi } from "@/components/ui/carousel";
 
 export const Services = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
-  const [api, setApi] = useState<CarouselApi>();
   
+  const scrollToForm = () => {
+    const formElement = document.getElementById('lead-form');
+    if (formElement) {
+      formElement.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   const services = [
     {
       icon: Rocket,
@@ -33,12 +40,12 @@ export const Services = () => {
         "Tenha mais previsibilidade e mensure o retorno do seu investimento"
       ],
       socialIcons: [
-        { icon: Hash, className: "bg-black" }, // TikTok replacement
+        { icon: Hash, className: "bg-black" },
         { icon: Linkedin, className: "bg-blue-600" },
         { icon: Instagram, className: "bg-gradient-to-r from-purple-500 to-pink-500" },
         { icon: Facebook, className: "bg-blue-600" },
         { icon: Youtube, className: "bg-red-600" },
-        { icon: X, className: "bg-black" } // X (Twitter) replacement
+        { icon: X, className: "bg-black" }
       ]
     },
     {
@@ -50,9 +57,6 @@ export const Services = () => {
         "Mais foco em conversão, não apenas em estética",
         "Criados com base na experiência de 15.500 empresas atendidas",
         "Feitos por profissionais que recebem treinamento constantemente"
-      ],
-      mockupImages: [
-        "/lovable-uploads/6b383023-34cc-4b2e-b1a9-58d19df99654.png"
       ]
     },
     {
@@ -64,9 +68,6 @@ export const Services = () => {
         "Feitas com as melhores práticas do mercado digital",
         "Fácil de implementar e editar",
         "Projetadas com as melhores ferramentas do mercado"
-      ],
-      mockupImages: [
-        "/lovable-uploads/2cf833cb-0ae6-4351-96bb-2e76473694ac.png"
       ]
     },
     {
@@ -78,9 +79,6 @@ export const Services = () => {
         "Visualize todo o seu funil de vendas",
         "Mantenha conexão com seus clientes e venda mais",
         "Faça upsell, downsell, crossel e campanhas promocionais"
-      ],
-      mockupImages: [
-        "/lovable-uploads/10e7bb1e-7510-428a-829d-d26f1fcd3fb6.png"
       ]
     },
     {
@@ -92,9 +90,6 @@ export const Services = () => {
         "Especialistas treinados, geridos e desenvolvidos por nós.",
         "Atendimento ágil e eficaz",
         "A expertise da Chave na sua empresa"
-      ],
-      mockupImages: [
-        "/lovable-uploads/cfe4be3f-de71-459d-9b87-a6e894fac69e.png"
       ]
     },
     {
@@ -106,9 +101,6 @@ export const Services = () => {
         "Tenha controle sobre os principais indicadores da sua empresa",
         "Transforme dados em insights e insights em boas decisões",
         "Acesse os dados a qualquer momento, em qualquer dispositivo"
-      ],
-      mockupImages: [
-        "/lovable-uploads/4c597074-4b59-47c0-8f40-ff4b8ead25db.png"
       ]
     },
     {
@@ -120,41 +112,30 @@ export const Services = () => {
         "Qualificamos as oportunidades e fechamos a venda para você",
         "Executivos de vendas treinados semanalmente",
         "Seu processo comercial sendo analisado e otimizado por nós"
-      ],
-      mockupImages: [
-        "/lovable-uploads/a83cfca6-3d64-4695-afaa-41236747d352.png"
       ]
     }
   ];
 
-  // Autoplay functionality
+  // Auto slide every 3.33 seconds
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentSlide((prev) => {
-        const nextSlide = (prev + 1) % services.length;
-        if (api) {
-          api.scrollTo(nextSlide);
-        }
-        return nextSlide;
-      });
-    }, 3330); // 3.33 seconds
+      setCurrentSlide((prev) => (prev + 1) % services.length);
+    }, 3330);
 
     return () => clearInterval(interval);
-  }, [services.length, api]);
+  }, [services.length]);
 
-  // Sync with carousel API
-  useEffect(() => {
-    if (!api) return;
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev + 1) % services.length);
+  };
 
-    const onSelect = () => {
-      setCurrentSlide(api.selectedScrollSnap());
-    };
+  const prevSlide = () => {
+    setCurrentSlide((prev) => (prev - 1 + services.length) % services.length);
+  };
 
-    api.on("select", onSelect);
-    return () => {
-      api.off("select", onSelect);
-    };
-  }, [api]);
+  const goToSlide = (index: number) => {
+    setCurrentSlide(index);
+  };
 
   return (
     <section id="servicos" className="py-20 bg-background">
@@ -176,80 +157,76 @@ export const Services = () => {
           </p>
         </div>
 
-        <div className="max-w-6xl mx-auto">
-          <Carousel 
-            className="w-full"
-            setApi={setApi}
-            opts={{
-              loop: true,
-              duration: 25
-            }}
-          >
-            <CarouselContent className="-ml-2 md:-ml-4 transition-transform duration-500 ease-in-out">
+        <div className="max-w-6xl mx-auto relative">
+          <div className="overflow-hidden">
+            <div 
+              className="flex transition-transform duration-500 ease-in-out"
+              style={{ transform: `translateX(-${currentSlide * 100}%)` }}
+            >
               {services.map((service, index) => (
-                <CarouselItem key={index} className="pl-2 md:pl-4 basis-full">
-                  <div className="bg-card border border-border rounded-3xl p-8 min-h-[500px] flex transform transition-all duration-500 ease-in-out">
-                    <div className="flex-1 pr-8">
-                      <div className="mb-6">
-                        <div className="w-16 h-16 bg-pink-500 rounded-2xl flex items-center justify-center mb-4">
-                          <service.icon className="w-8 h-8 text-white" />
-                        </div>
-                        <h3 className="text-3xl font-bold mb-2">{service.title}</h3>
-                        {service.subtitle && (
-                          <p className="text-muted-foreground text-lg">{service.subtitle}</p>
-                        )}
+                <div key={index} className="w-full flex-shrink-0">
+                  <div className="bg-card border border-border rounded-3xl p-8 min-h-[500px] mx-4">
+                    <div className="mb-6">
+                      <div className="w-16 h-16 bg-pink-500 rounded-2xl flex items-center justify-center mb-4">
+                        <service.icon className="w-8 h-8 text-white" />
                       </div>
-                      
-                      <p className="text-muted-foreground text-lg mb-8 leading-relaxed">
-                        {service.description}
-                      </p>
-                      
-                      <div className="space-y-4">
-                        {service.features.map((feature, idx) => (
-                          <div key={idx} className="flex items-start gap-3">
-                            <div className="w-2 h-2 bg-pink-500 rounded-full mt-2 flex-shrink-0"></div>
-                            <span className="text-muted-foreground">{feature}</span>
-                          </div>
-                        ))}
-                      </div>
-
-                      {service.socialIcons && (
-                        <div className="mt-8 flex gap-4">
-                          {service.socialIcons.map((social, idx) => (
-                            <div key={idx} className={`w-12 h-12 rounded-xl ${social.className} flex items-center justify-center`}>
-                              <social.icon className="w-6 h-6 text-white" />
-                            </div>
-                          ))}
-                        </div>
+                      <h3 className="text-3xl font-bold mb-2">{service.title}</h3>
+                      {service.subtitle && (
+                        <p className="text-muted-foreground text-lg">{service.subtitle}</p>
                       )}
                     </div>
                     
-                    {service.mockupImages && (
-                      <div className="flex-1 flex items-center justify-center">
-                        <div className="relative">
-                          <img 
-                            src={service.mockupImages[0]} 
-                            alt={service.title}
-                            className="max-w-full h-auto rounded-2xl"
-                          />
+                    <p className="text-muted-foreground text-lg mb-8 leading-relaxed">
+                      {service.description}
+                    </p>
+                    
+                    <div className="space-y-4">
+                      {service.features.map((feature, idx) => (
+                        <div key={idx} className="flex items-start gap-3">
+                          <div className="w-2 h-2 bg-pink-500 rounded-full mt-2 flex-shrink-0"></div>
+                          <span className="text-muted-foreground">{feature}</span>
                         </div>
+                      ))}
+                    </div>
+
+                    {service.socialIcons && (
+                      <div className="mt-8 flex gap-4">
+                        {service.socialIcons.map((social, idx) => (
+                          <div key={idx} className={`w-12 h-12 rounded-xl ${social.className} flex items-center justify-center`}>
+                            <social.icon className="w-6 h-6 text-white" />
+                          </div>
+                        ))}
                       </div>
                     )}
                   </div>
-                </CarouselItem>
+                </div>
               ))}
-            </CarouselContent>
-            <CarouselPrevious className="left-4" />
-            <CarouselNext className="right-4" />
-          </Carousel>
+            </div>
+          </div>
+
+          {/* Navigation arrows */}
+          <button
+            onClick={prevSlide}
+            className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-white shadow-lg rounded-full p-3 hover:bg-gray-50 transition-colors z-10"
+          >
+            <ChevronLeft className="w-6 h-6 text-gray-600" />
+          </button>
+
+          <button
+            onClick={nextSlide}
+            className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-white shadow-lg rounded-full p-3 hover:bg-gray-50 transition-colors z-10"
+          >
+            <ChevronRight className="w-6 h-6 text-gray-600" />
+          </button>
         </div>
 
         <div className="text-center mt-16">
           <div className="flex justify-center mb-8">
             <div className="flex gap-2">
               {services.map((_, index) => (
-                <div 
-                  key={index} 
+                <button
+                  key={index}
+                  onClick={() => goToSlide(index)}
                   className={`w-2 h-2 rounded-full transition-colors duration-300 ${
                     index === currentSlide ? 'bg-pink-500' : 'bg-gray-300'
                   }`}
@@ -257,7 +234,10 @@ export const Services = () => {
               ))}
             </div>
           </div>
-          <Button className="bg-gradient-to-r from-pink-500 to-orange-400 hover:from-pink-600 hover:to-orange-500 text-white px-8 py-6 text-lg">
+          <Button 
+            onClick={scrollToForm}
+            className="bg-gradient-to-r from-pink-500 to-orange-400 hover:from-pink-600 hover:to-orange-500 text-white px-8 py-6 text-lg"
+          >
             Quero um marketing sob medida
           </Button>
         </div>
