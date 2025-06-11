@@ -151,7 +151,9 @@ export const Services = () => {
     };
 
     api.on("select", onSelect);
-    return () => api.off("select", onSelect);
+    return () => {
+      api.off("select", onSelect);
+    };
   }, [api]);
 
   return (
