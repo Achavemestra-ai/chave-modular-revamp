@@ -10,8 +10,29 @@ export const FinalCTA = () => {
   };
 
   return (
-    <section className="py-20 bg-gradient-to-r from-pink-500 via-purple-500 to-orange-400">
-      <div className="container mx-auto px-4">
+    <section className="py-20 relative overflow-hidden">
+      {/* Animated gradient background */}
+      <div className="absolute inset-0 opacity-90">
+        <div 
+          className="absolute inset-0 bg-gradient-to-br from-pink-500 via-purple-500 to-orange-400"
+          style={{
+            backgroundSize: '400% 400%',
+            animation: 'gradientShift 8s ease-in-out infinite',
+            filter: 'url(#noise-final)'
+          }}
+        />
+        <svg className="absolute inset-0 w-full h-full opacity-30">
+          <defs>
+            <filter id="noise-final">
+              <feTurbulence baseFrequency="0.9" numOctaves="3" seed="2" />
+              <feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.1 0" />
+              <feComposite in2="SourceGraphic" operator="multiply" />
+            </filter>
+          </defs>
+        </svg>
+      </div>
+
+      <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-4xl mx-auto text-center text-white">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             Pronto para Acelerar seu Crescimento?
@@ -30,6 +51,14 @@ export const FinalCTA = () => {
           </Button>
         </div>
       </div>
+
+      <style jsx>{`
+        @keyframes gradientShift {
+          0% { background-position: 0% 50%; }
+          50% { background-position: 100% 50%; }
+          100% { background-position: 0% 50%; }
+        }
+      `}</style>
     </section>
   );
 };

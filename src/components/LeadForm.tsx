@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -56,8 +55,29 @@ Meus dados:
   };
 
   return (
-    <section id="lead-form" className="py-20 bg-gradient-to-r from-pink-500 via-purple-500 to-orange-400">
-      <div className="container mx-auto px-4">
+    <section id="lead-form" className="py-20 relative overflow-hidden">
+      {/* Animated gradient background */}
+      <div className="absolute inset-0 opacity-90">
+        <div 
+          className="absolute inset-0 bg-gradient-to-br from-pink-500 via-purple-500 to-orange-400"
+          style={{
+            backgroundSize: '400% 400%',
+            animation: 'gradientShift 8s ease-in-out infinite',
+            filter: 'url(#noise)'
+          }}
+        />
+        <svg className="absolute inset-0 w-full h-full opacity-30">
+          <defs>
+            <filter id="noise">
+              <feTurbulence baseFrequency="0.9" numOctaves="3" seed="1" />
+              <feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.1 0" />
+              <feComposite in2="SourceGraphic" operator="multiply" />
+            </filter>
+          </defs>
+        </svg>
+      </div>
+
+      <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-2xl mx-auto">
           <div className="text-center mb-12 text-white">
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
@@ -163,16 +183,16 @@ Meus dados:
                   className="mt-2"
                 >
                   <div className="flex items-center space-x-2">
-                    <RadioGroupItem value="menos-1-ano" id="menos-1-ano" />
-                    <Label htmlFor="menos-1-ano" className="text-gray-800 font-medium">Menos de 1 ano</Label>
+                    <RadioGroupItem value="menos-1-ano" id="menos-1-ano" className="border-gray-700 text-gray-900" />
+                    <Label htmlFor="menos-1-ano" className="text-gray-900 font-medium cursor-pointer">Menos de 1 ano</Label>
                   </div>
                   <div className="flex items-center space-x-2">
-                    <RadioGroupItem value="1-3-anos" id="1-3-anos" />
-                    <Label htmlFor="1-3-anos" className="text-gray-800 font-medium">1 a 3 anos</Label>
+                    <RadioGroupItem value="1-3-anos" id="1-3-anos" className="border-gray-700 text-gray-900" />
+                    <Label htmlFor="1-3-anos" className="text-gray-900 font-medium cursor-pointer">1 a 3 anos</Label>
                   </div>
                   <div className="flex items-center space-x-2">
-                    <RadioGroupItem value="mais-5-anos" id="mais-5-anos" />
-                    <Label htmlFor="mais-5-anos" className="text-gray-800 font-medium">Mais de 5 anos</Label>
+                    <RadioGroupItem value="mais-5-anos" id="mais-5-anos" className="border-gray-700 text-gray-900" />
+                    <Label htmlFor="mais-5-anos" className="text-gray-900 font-medium cursor-pointer">Mais de 5 anos</Label>
                   </div>
                 </RadioGroup>
               </div>
@@ -185,16 +205,16 @@ Meus dados:
                   className="mt-2"
                 >
                   <div className="flex items-center space-x-2">
-                    <RadioGroupItem value="menos-5mil" id="menos-5mil" />
-                    <Label htmlFor="menos-5mil" className="text-gray-800 font-medium">Menos de 5mil reais</Label>
+                    <RadioGroupItem value="menos-5mil" id="menos-5mil" className="border-gray-700 text-gray-900" />
+                    <Label htmlFor="menos-5mil" className="text-gray-900 font-medium cursor-pointer">Menos de 5mil reais</Label>
                   </div>
                   <div className="flex items-center space-x-2">
-                    <RadioGroupItem value="5-10mil" id="5-10mil" />
-                    <Label htmlFor="5-10mil" className="text-gray-800 font-medium">5 a 10mil reais</Label>
+                    <RadioGroupItem value="5-10mil" id="5-10mil" className="border-gray-700 text-gray-900" />
+                    <Label htmlFor="5-10mil" className="text-gray-900 font-medium cursor-pointer">5 a 10mil reais</Label>
                   </div>
                   <div className="flex items-center space-x-2">
-                    <RadioGroupItem value="mais-10mil" id="mais-10mil" />
-                    <Label htmlFor="mais-10mil" className="text-gray-800 font-medium">Mais de 10 mil reais</Label>
+                    <RadioGroupItem value="mais-10mil" id="mais-10mil" className="border-gray-700 text-gray-900" />
+                    <Label htmlFor="mais-10mil" className="text-gray-900 font-medium cursor-pointer">Mais de 10 mil reais</Label>
                   </div>
                 </RadioGroup>
               </div>
@@ -220,12 +240,12 @@ Meus dados:
                   className="mt-2"
                 >
                   <div className="flex items-center space-x-2">
-                    <RadioGroupItem value="sim" id="marketing-sim" />
-                    <Label htmlFor="marketing-sim" className="text-gray-800 font-medium">Sim</Label>
+                    <RadioGroupItem value="sim" id="marketing-sim" className="border-gray-700 text-gray-900" />
+                    <Label htmlFor="marketing-sim" className="text-gray-900 font-medium cursor-pointer">Sim</Label>
                   </div>
                   <div className="flex items-center space-x-2">
-                    <RadioGroupItem value="nao" id="marketing-nao" />
-                    <Label htmlFor="marketing-nao" className="text-gray-800 font-medium">Não</Label>
+                    <RadioGroupItem value="nao" id="marketing-nao" className="border-gray-700 text-gray-900" />
+                    <Label htmlFor="marketing-nao" className="text-gray-900 font-medium cursor-pointer">Não</Label>
                   </div>
                 </RadioGroup>
               </div>
@@ -245,6 +265,14 @@ Meus dados:
           </div>
         </div>
       </div>
+
+      <style jsx>{`
+        @keyframes gradientShift {
+          0% { background-position: 0% 50%; }
+          50% { background-position: 100% 50%; }
+          100% { background-position: 0% 50%; }
+        }
+      `}</style>
     </section>
   );
 };

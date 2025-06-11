@@ -24,7 +24,7 @@ export const Hero = () => {
         {/* Central triangle */}
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
           <div 
-            className="w-0 h-0 border-l-[12px] border-r-[12px] border-b-[18px] border-l-transparent border-r-transparent"
+            className="w-0 h-0 border-l-[20px] border-r-[20px] border-b-[30px] border-l-transparent border-r-transparent"
             style={{
               borderBottomColor: '#ec4899'
             }}
@@ -65,16 +65,6 @@ export const Hero = () => {
             para atender seu negócio
           </h1>
           
-          <div className="mt-12">
-            <Button 
-              onClick={scrollToForm}
-              size="lg" 
-              className="bg-gradient-to-r from-pink-500 to-orange-400 hover:from-pink-600 hover:to-orange-500 text-white px-12 py-6 text-xl font-bold"
-            >
-              QUERO MAIS INFORMAÇÕES
-            </Button>
-          </div>
-
           <div className="mt-20">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 items-center opacity-70 mb-6">
               <div className="bg-white/10 rounded-full p-4 w-16 h-16 flex items-center justify-center mx-auto">
@@ -90,9 +80,17 @@ export const Hero = () => {
                 <Laptop className="w-8 h-8 text-white" />
               </div>
             </div>
-            <p className="text-gray-300 text-lg">
+            <p className="text-gray-300 text-lg mb-8">
               Chegou o momento de virar A Chave da sua empresa para novos horizontes
             </p>
+            
+            <Button 
+              onClick={scrollToForm}
+              size="lg" 
+              className="bg-gradient-to-r from-pink-500 to-orange-400 hover:from-pink-600 hover:to-orange-500 text-white px-12 py-6 text-xl font-bold"
+            >
+              QUERO MAIS INFORMAÇÕES
+            </Button>
           </div>
         </div>
       </div>
