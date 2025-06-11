@@ -53,9 +53,10 @@ export const CTA = () => {
               size="lg" 
               className="px-8 py-6 text-lg font-semibold text-pink-500 relative overflow-hidden"
               style={{
-                background: 'linear-gradient(-45deg, #ffffff, #f8f8f8, #ffffff)',
+                background: 'linear-gradient(45deg, #ffffff, #f8f8f8, #ffffff)',
                 backgroundSize: '400% 400%',
-                animation: 'gradientShift 8s ease-in-out infinite'
+                animation: 'gradientShift 8s ease-in-out infinite',
+                boxShadow: '0 0 20px rgba(251, 191, 36, 0.66)'
               }}
             >
               Agendar Consultoria Gratuita
@@ -65,6 +66,9 @@ export const CTA = () => {
               size="lg" 
               variant="outline" 
               className="border-2 border-white text-white hover:bg-white hover:text-pink-500 px-8 py-6 text-lg"
+              style={{
+                boxShadow: '0 0 20px rgba(251, 191, 36, 0.66)'
+              }}
             >
               (11) 9999-9999
             </Button>

@@ -24,7 +24,7 @@ export const Hero = () => {
         {/* Central triangle */}
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
           <div 
-            className="w-0 h-0 border-l-[30px] border-r-[30px] border-b-[45px] border-l-transparent border-r-transparent"
+            className="w-0 h-0 border-l-[40px] border-r-[40px] border-b-[60px] border-l-transparent border-r-transparent"
             style={{
               borderBottomColor: '#ec4899'
             }}
@@ -101,9 +101,10 @@ export const Hero = () => {
               size="lg" 
               className="text-white px-12 py-6 text-xl font-bold relative overflow-hidden"
               style={{
-                background: 'linear-gradient(-45deg, #ec4899, #a855f7, #f97316)',
+                background: 'linear-gradient(45deg, #f97316, #a855f7, #ec4899)',
                 backgroundSize: '400% 400%',
-                animation: 'gradientShift 8s ease-in-out infinite'
+                animation: 'gradientShift 8s ease-in-out infinite',
+                boxShadow: '0 0 20px rgba(251, 191, 36, 0.66)'
               }}
             >
               QUERO MAIS INFORMAÇÕES

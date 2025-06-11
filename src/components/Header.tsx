@@ -49,10 +49,11 @@ export const Header = () => {
               <Button 
                 onClick={scrollToForm}
                 style={{
-                  background: 'linear-gradient(-45deg, #ec4899, #a855f7, #f97316)',
+                  background: 'linear-gradient(45deg, #f97316, #a855f7, #ec4899)',
                   backgroundSize: '400% 400%',
                   animation: 'gradientShift 8s ease-in-out infinite',
-                  color: 'white'
+                  color: 'white',
+                  boxShadow: '0 0 20px rgba(251, 191, 36, 0.66)'
                 }}
               >
                 Solicitar Consultoria
@@ -82,9 +83,10 @@ export const Header = () => {
                 onClick={scrollToForm}
                 className="w-full text-white"
                 style={{
-                  background: 'linear-gradient(-45deg, #ec4899, #a855f7, #f97316)',
+                  background: 'linear-gradient(45deg, #f97316, #a855f7, #ec4899)',
                   backgroundSize: '400% 400%',
-                  animation: 'gradientShift 8s ease-in-out infinite'
+                  animation: 'gradientShift 8s ease-in-out infinite',
+                  boxShadow: '0 0 20px rgba(251, 191, 36, 0.66)'
                 }}
               >
                 Solicitar Consultoria
