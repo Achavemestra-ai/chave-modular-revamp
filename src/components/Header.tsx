@@ -24,7 +24,17 @@ export const Header = () => {
               alt="A Chave Logo" 
               className="h-10 w-10"
             />
-            <span className="text-2xl font-bold bg-gradient-to-r from-pink-500 to-orange-400 bg-clip-text text-transparent">
+            <span 
+              className="text-2xl font-bold"
+              style={{
+                background: 'linear-gradient(-45deg, #ec4899, #a855f7, #f97316)',
+                backgroundSize: '400% 400%',
+                animation: 'gradientShift 8s ease-in-out infinite',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+                backgroundClip: 'text'
+              }}
+            >
               A Chave
             </span>
           </div>
@@ -38,7 +48,12 @@ export const Header = () => {
               <ThemeToggle />
               <Button 
                 onClick={scrollToForm}
-                className="bg-gradient-to-r from-pink-500 to-orange-400 hover:from-pink-600 hover:to-orange-500"
+                style={{
+                  background: 'linear-gradient(-45deg, #ec4899, #a855f7, #f97316)',
+                  backgroundSize: '400% 400%',
+                  animation: 'gradientShift 8s ease-in-out infinite',
+                  color: 'white'
+                }}
               >
                 Solicitar Consultoria
               </Button>
@@ -65,7 +80,12 @@ export const Header = () => {
               <a href="#contato" className="text-foreground hover:text-primary transition-colors">Contato</a>
               <Button 
                 onClick={scrollToForm}
-                className="bg-gradient-to-r from-pink-500 to-orange-400 hover:from-pink-600 hover:to-orange-500 w-full"
+                className="w-full text-white"
+                style={{
+                  background: 'linear-gradient(-45deg, #ec4899, #a855f7, #f97316)',
+                  backgroundSize: '400% 400%',
+                  animation: 'gradientShift 8s ease-in-out infinite'
+                }}
               >
                 Solicitar Consultoria
               </Button>
@@ -73,6 +93,14 @@ export const Header = () => {
           </nav>
         )}
       </div>
+
+      <style>{`
+        @keyframes gradientShift {
+          0% { background-position: 0% 50%; }
+          50% { background-position: 100% 50%; }
+          100% { background-position: 0% 50%; }
+        }
+      `}</style>
     </header>
   );
 };

@@ -24,7 +24,7 @@ export const Hero = () => {
         {/* Central triangle */}
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
           <div 
-            className="w-0 h-0 border-l-[20px] border-r-[20px] border-b-[30px] border-l-transparent border-r-transparent"
+            className="w-0 h-0 border-l-[30px] border-r-[30px] border-b-[45px] border-l-transparent border-r-transparent"
             style={{
               borderBottomColor: '#ec4899'
             }}
@@ -61,7 +61,19 @@ export const Hero = () => {
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-5xl md:text-7xl font-bold mb-8 leading-tight">
             Tenha um time feito{" "}
-            <span className="text-pink-500">sob medida</span>{" "}
+            <span 
+              className="font-bold"
+              style={{
+                background: 'linear-gradient(-45deg, #ec4899, #a855f7, #f97316)',
+                backgroundSize: '400% 400%',
+                animation: 'gradientShift 8s ease-in-out infinite',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+                backgroundClip: 'text'
+              }}
+            >
+              sob medida
+            </span>{" "}
             para atender seu negócio
           </h1>
           
@@ -87,13 +99,26 @@ export const Hero = () => {
             <Button 
               onClick={scrollToForm}
               size="lg" 
-              className="bg-gradient-to-r from-pink-500 to-orange-400 hover:from-pink-600 hover:to-orange-500 text-white px-12 py-6 text-xl font-bold"
+              className="text-white px-12 py-6 text-xl font-bold relative overflow-hidden"
+              style={{
+                background: 'linear-gradient(-45deg, #ec4899, #a855f7, #f97316)',
+                backgroundSize: '400% 400%',
+                animation: 'gradientShift 8s ease-in-out infinite'
+              }}
             >
               QUERO MAIS INFORMAÇÕES
             </Button>
           </div>
         </div>
       </div>
+
+      <style>{`
+        @keyframes gradientShift {
+          0% { background-position: 0% 50%; }
+          50% { background-position: 100% 50%; }
+          100% { background-position: 0% 50%; }
+        }
+      `}</style>
     </section>
   );
 };

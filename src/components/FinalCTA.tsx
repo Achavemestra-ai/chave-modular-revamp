@@ -34,7 +34,17 @@ export const FinalCTA = () => {
 
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-4xl mx-auto text-center text-white">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
+          <h2 
+            className="text-4xl md:text-5xl font-bold mb-6"
+            style={{
+              background: 'linear-gradient(-45deg, #ec4899, #a855f7, #f97316)',
+              backgroundSize: '400% 400%',
+              animation: 'gradientShift 8s ease-in-out infinite',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+              backgroundClip: 'text'
+            }}
+          >
             Pronto para Acelerar seu Crescimento?
           </h2>
           <p className="text-xl mb-12 leading-relaxed">
@@ -45,14 +55,20 @@ export const FinalCTA = () => {
           <Button 
             onClick={scrollToForm}
             size="lg" 
-            className="bg-white text-pink-500 hover:bg-gray-100 px-12 py-6 text-xl font-bold"
+            className="px-12 py-6 text-xl font-bold text-white relative overflow-hidden"
+            style={{
+              background: 'linear-gradient(-45deg, #ffffff, #f8f8f8, #ffffff)',
+              backgroundSize: '400% 400%',
+              animation: 'gradientShift 8s ease-in-out infinite',
+              color: '#ec4899'
+            }}
           >
             Agendar Consultoria Gratuita Agora
           </Button>
         </div>
       </div>
 
-      <style jsx>{`
+      <style>{`
         @keyframes gradientShift {
           0% { background-position: 0% 50%; }
           50% { background-position: 100% 50%; }
