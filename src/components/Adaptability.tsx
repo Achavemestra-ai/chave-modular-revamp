@@ -1,4 +1,3 @@
-
 export const Adaptability = () => {
   return (
     <section className="py-20 bg-black">
@@ -19,13 +18,13 @@ export const Adaptability = () => {
             </p>
             <p>
               É evidente, contudo, que nossa empresa possui uma experiência acumulada através 
-              de seus mais de <span className="text-pink-400 font-bold">5500 clientes</span>. 
+              de seus <span className="text-pink-400 font-bold">50 clientes atendidos</span>. 
               Nossa equipe usufrui desse conhecimento para entregar a você os resultados que 
               almeja alcançar.
             </p>
             <p>
               Abraçamos qualquer tipo de negócio, não importa o seu tamanho. Hoje, contamos com 
-              mais de <span className="text-pink-400 font-bold">200 especialistas</span> espalhados 
+              mais de <span className="text-pink-400 font-bold">20 especialistas</span> espalhados 
               pelo Brasil. Cada um está mais apto a responder determinado modelo empresarial.
             </p>
             <p className="text-pink-400 font-semibold">
