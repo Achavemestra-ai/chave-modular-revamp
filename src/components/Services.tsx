@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { 
   Rocket, 
@@ -55,7 +54,7 @@ export const Services = () => {
       description: "Seus anúncios criados pelos copywriters e designers da Chave",
       features: [
         "Mais foco em conversão, não apenas em estética",
-        "Criados com base na experiência de 15.500 empresas atendidas",
+        "Criados com base na experiência de 50 empresas atendidas",
         "Feitos por profissionais que recebem treinamento constantemente"
       ]
     },
@@ -116,11 +115,11 @@ export const Services = () => {
     }
   ];
 
-  // Auto slide every 3.33 seconds
+  // Auto slide every 6 seconds
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % services.length);
-    }, 3330);
+    }, 6000);
 
     return () => clearInterval(interval);
   }, [services.length]);
@@ -204,7 +203,6 @@ export const Services = () => {
             </div>
           </div>
 
-          {/* Navigation arrows */}
           <button
             onClick={prevSlide}
             className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-white shadow-lg rounded-full p-3 hover:bg-gray-50 transition-colors z-10"

@@ -1,7 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
-import { ThemeToggle } from "./ThemeToggle";
 
 export const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -17,11 +16,11 @@ export const Header = () => {
     <header className="fixed top-0 w-full bg-background/95 backdrop-blur-sm border-b border-border z-50">
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
-          <div className="flex items-center space-x-2">
+          <div className="flex items-center space-x-1">
             <img 
-              src="/lovable-uploads/182f3f96-891a-47f8-a34b-cc975b2b9248.png" 
+              src="/lovable-uploads/logo-chave.png" 
               alt="A Chave Logo" 
-              className="h-10 w-10"
+              className="h-12 w-12 object-contain"
             />
             <span 
               className="text-2xl font-bold"
@@ -43,24 +42,20 @@ export const Header = () => {
             <a href="#sobre" className="text-foreground hover:text-primary transition-colors">Sobre</a>
             <a href="#servicos" className="text-foreground hover:text-primary transition-colors">Serviços</a>
             <a href="#contato" className="text-foreground hover:text-primary transition-colors">Contato</a>
-            <div className="flex items-center space-x-2">
-              <ThemeToggle />
-              <Button 
-                onClick={scrollToForm}
-                style={{
-                  background: 'linear-gradient(45deg, #f97316, #a855f7, #ec4899)',
-                  backgroundSize: '400% 400%',
-                  animation: 'gradientShift 8s ease-in-out infinite',
-                  color: 'white',
-                  boxShadow: '0 0 20px rgba(251, 191, 36, 0.66)'
-                }}
-              >
-                Solicitar Consultoria
-              </Button>
-            </div>
+            <Button 
+              onClick={scrollToForm}
+              style={{
+                background: 'linear-gradient(45deg, #f97316, #a855f7, #ec4899)',
+                backgroundSize: '400% 400%',
+                animation: 'gradientShift 8s ease-in-out infinite',
+                color: 'white',
+                boxShadow: '0 0 20px rgba(251, 191, 36, 0.66)'
+              }}
+            >
+              Solicitar Consultoria
+            </Button>
           </nav>
 
-          {/* Mobile menu button */}
           <button
             className="md:hidden text-foreground"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -69,7 +64,6 @@ export const Header = () => {
           </button>
         </div>
 
-        {/* Mobile menu */}
         {isMenuOpen && (
           <nav className="md:hidden mt-4 pb-4 border-t border-border pt-4">
             <div className="flex flex-col space-y-4">
