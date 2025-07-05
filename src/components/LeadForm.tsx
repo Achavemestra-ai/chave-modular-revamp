@@ -87,7 +87,7 @@ Meus dados:
             viewport={{ once: false, amount: 0.4 }}
             transition={{ duration: 0.8, ease: 'easeOut' }}
           >
-            Transforme sua Empresa com Marketing Digital
+            Transforme sua Empresa com Tecnologia + Estratégia
           </motion.h2>
 
           <motion.p
