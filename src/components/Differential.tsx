@@ -20,7 +20,13 @@ export const Differential = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
           >
-            A Chave não é uma agência tradicional. Somos uma <span className="text-white font-semibold">Assessoria de Marketing Digital</span>, com foco total nos resultados do seu negócio — e não apenas em campanhas bonitas.
+            A Chave não é uma agência tradicional. Somos uma{" "}
+            <span className="text-white font-semibold">
+              <span className="text-pink-500">Assessoria Empresarial</span> baseada em{" "}
+              <span className="text-pink-500">Business Intelligence</span> e{" "}
+              <span className="text-pink-500">Marketing Ideológico</span>
+            </span>
+            , com foco total nos resultados reais do seu negócio e não apenas em campanhas criativas.
           </motion.p>
         </div>
 
