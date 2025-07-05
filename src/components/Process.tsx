@@ -10,7 +10,15 @@ export const Process = () => {
           
           <div className="grid md:grid-cols-2 gap-12">
             <div className="text-center">
-              <div className="w-20 h-20 bg-gradient-to-r from-pink-500 to-orange-400 rounded-full flex items-center justify-center mx-auto mb-6">
+              <div 
+                className="w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6"
+                style={{
+                  background: 'linear-gradient(45deg, #f97316, #a855f7, #ec4899)',
+                  backgroundSize: '400% 400%',
+                  animation: 'gradientShift 8s ease-in-out infinite',
+                  boxShadow: '0 0 20px rgba(251, 191, 36, 0.66)'
+                }}
+              >
                 <span className="text-3xl font-bold text-white">1</span>
               </div>
               <p className="text-gray-300 text-lg leading-relaxed">
@@ -20,17 +28,33 @@ export const Process = () => {
             </div>
             
             <div className="text-center">
-              <div className="w-20 h-20 bg-gradient-to-r from-pink-500 to-orange-400 rounded-full flex items-center justify-center mx-auto mb-6">
+              <div 
+                className="w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6"
+                style={{
+                  background: 'linear-gradient(45deg, #f97316, #a855f7, #ec4899)',
+                  backgroundSize: '400% 400%',
+                  animation: 'gradientShift 8s ease-in-out infinite',
+                  boxShadow: '0 0 20px rgba(251, 191, 36, 0.66)'
+                }}
+              >
                 <span className="text-3xl font-bold text-white">2</span>
               </div>
               <p className="text-gray-300 text-lg leading-relaxed">
-                Em até 12 horas, um dos nossos especialistas fará uma ligação para 
-                agendar a reunião mais importante com você.
+                No mesmo dia um de nossos especialistas retornará o contato para 
+                agendar sua consultoria gratuita.
               </p>
             </div>
           </div>
         </div>
       </div>
+
+      <style>{`
+        @keyframes gradientShift {
+          0% { background-position: 0% 50%; }
+          50% { background-position: 100% 50%; }
+          100% { background-position: 0% 50%; }
+        }
+      `}</style>
     </section>
   );
 };

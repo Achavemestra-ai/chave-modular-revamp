@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
+import { ThemeToggle } from "./ThemeToggle";
 
 export const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -22,7 +23,17 @@ export const Header = () => {
               alt="A Chave Logo" 
               className="h-10 w-10"
             />
-            <span className="text-2xl font-bold bg-gradient-to-r from-pink-500 to-orange-400 bg-clip-text text-transparent">
+            <span 
+              className="text-2xl font-bold"
+              style={{
+                background: 'linear-gradient(-45deg, #ec4899, #a855f7, #f97316)',
+                backgroundSize: '400% 400%',
+                animation: 'gradientShift 8s ease-in-out infinite',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+                backgroundClip: 'text'
+              }}
+            >
               A Chave
             </span>
           </div>
@@ -32,9 +43,21 @@ export const Header = () => {
             <a href="#sobre" className="text-foreground hover:text-primary transition-colors">Sobre</a>
             <a href="#servicos" className="text-foreground hover:text-primary transition-colors">Serviços</a>
             <a href="#contato" className="text-foreground hover:text-primary transition-colors">Contato</a>
-            <Button onClick={scrollToForm} className="bg-gradient-to-r from-pink-500 to-purple-500 text-white font-bold">
-              Solicitar Consultoria
-            </Button>
+            <div className="flex items-center space-x-2">
+              <ThemeToggle />
+              <Button 
+                onClick={scrollToForm}
+                style={{
+                  background: 'linear-gradient(45deg, #f97316, #a855f7, #ec4899)',
+                  backgroundSize: '400% 400%',
+                  animation: 'gradientShift 8s ease-in-out infinite',
+                  color: 'white',
+                  boxShadow: '0 0 20px rgba(251, 191, 36, 0.66)'
+                }}
+              >
+                Solicitar Consultoria
+              </Button>
+            </div>
           </nav>
 
           {/* Mobile menu button */}
@@ -48,17 +71,36 @@ export const Header = () => {
 
         {/* Mobile menu */}
         {isMenuOpen && (
-          <div className="md:hidden mt-4 space-y-4">
-            <a href="#inicio" className="block text-foreground hover:text-primary transition-colors">Início</a>
-            <a href="#sobre" className="block text-foreground hover:text-primary transition-colors">Sobre</a>
-            <a href="#servicos" className="block text-foreground hover:text-primary transition-colors">Serviços</a>
-            <a href="#contato" className="block text-foreground hover:text-primary transition-colors">Contato</a>
-            <Button onClick={scrollToForm} className="w-full bg-gradient-to-r from-pink-500 to-purple-500 text-white font-bold">
-              Solicitar Consultoria
-            </Button>
-          </div>
+          <nav className="md:hidden mt-4 pb-4 border-t border-border pt-4">
+            <div className="flex flex-col space-y-4">
+              <a href="#inicio" className="text-foreground hover:text-primary transition-colors">Início</a>
+              <a href="#sobre" className="text-foreground hover:text-primary transition-colors">Sobre</a>
+              <a href="#servicos" className="text-foreground hover:text-primary transition-colors">Serviços</a>
+              <a href="#contato" className="text-foreground hover:text-primary transition-colors">Contato</a>
+              <Button 
+                onClick={scrollToForm}
+                className="w-full text-white"
+                style={{
+                  background: 'linear-gradient(45deg, #f97316, #a855f7, #ec4899)',
+                  backgroundSize: '400% 400%',
+                  animation: 'gradientShift 8s ease-in-out infinite',
+                  boxShadow: '0 0 20px rgba(251, 191, 36, 0.66)'
+                }}
+              >
+                Solicitar Consultoria
+              </Button>
+            </div>
+          </nav>
         )}
       </div>
+
+      <style>{`
+        @keyframes gradientShift {
+          0% { background-position: 0% 50%; }
+          50% { background-position: 100% 50%; }
+          100% { background-position: 0% 50%; }
+        }
+      `}</style>
     </header>
   );
 };

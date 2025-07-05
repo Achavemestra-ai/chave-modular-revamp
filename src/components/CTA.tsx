@@ -3,11 +3,28 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, CheckCircle } from "lucide-react";
 
 export const CTA = () => {
+  const scrollToForm = () => {
+    const formElement = document.getElementById('lead-form');
+    if (formElement) {
+      formElement.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <section className="py-20 bg-gradient-to-r from-pink-500 via-purple-500 to-orange-400">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto text-center text-white">
-          <h2 className="text-3xl md:text-5xl font-bold mb-6">
+          <h2 
+            className="text-3xl md:text-5xl font-bold mb-6"
+            style={{
+              background: 'linear-gradient(-45deg, #ffffff, #f8f8f8, #ffffff)',
+              backgroundSize: '400% 400%',
+              animation: 'gradientShift 8s ease-in-out infinite',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+              backgroundClip: 'text'
+            }}
+          >
             Pronto para transformar seus dados em resultados?
           </h2>
           <p className="text-xl opacity-90 mb-12 leading-relaxed">
@@ -32,8 +49,15 @@ export const CTA = () => {
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <Button 
+              onClick={scrollToForm}
               size="lg" 
-              className="bg-white text-pink-500 hover:bg-gray-100 px-8 py-6 text-lg font-semibold"
+              className="px-8 py-6 text-lg font-semibold text-pink-500 relative overflow-hidden"
+              style={{
+                background: 'linear-gradient(45deg, #ffffff, #f8f8f8, #ffffff)',
+                backgroundSize: '400% 400%',
+                animation: 'gradientShift 8s ease-in-out infinite',
+                boxShadow: '0 0 20px rgba(251, 191, 36, 0.66)'
+              }}
             >
               Agendar Consultoria Gratuita
               <ArrowRight className="ml-2" />
@@ -42,6 +66,9 @@ export const CTA = () => {
               size="lg" 
               variant="outline" 
               className="border-2 border-white text-white hover:bg-white hover:text-pink-500 px-8 py-6 text-lg"
+              style={{
+                boxShadow: '0 0 20px rgba(251, 191, 36, 0.66)'
+              }}
             >
               (11) 9999-9999
             </Button>
@@ -52,6 +79,14 @@ export const CTA = () => {
           </div>
         </div>
       </div>
+
+      <style>{`
+        @keyframes gradientShift {
+          0% { background-position: 0% 50%; }
+          50% { background-position: 100% 50%; }
+          100% { background-position: 0% 50%; }
+        }
+      `}</style>
     </section>
   );
 };
