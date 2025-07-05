@@ -21,9 +21,9 @@ Outro ponto importante é que nosso plano de assessoria também pode se adaptar 
     },
     {
       question: "O que está incluído na consultoria gratuita?",
-      answer: `A Consultoria Gratuita que você receberá ao preencher o formulário procura te mostrar como a Assessoria de Marketing d'A Chave se encaixa na sua empresa.
+      answer: `A Consultoria Gratuita que você receberá ao preencher o formulário procura te mostrar como a Assessoria de Marketing da Chave se encaixa na sua empresa.
 
-Uma vez implementada, na Assessoria de Marketing d'A Chave você terá uma equipe preparada para cuidar do marketing da sua empresa, enquanto dentro do squad que vai te atender, você pode solicitar consultorias estratégicas para que você mesmo consiga tomar decisões melhores dentro do seu negócio.`
+Uma vez implementada, na Assessoria de Marketing da Chave você terá uma equipe preparada para cuidar do marketing da sua empresa, enquanto dentro do squad que vai te atender, você pode solicitar consultorias estratégicas para que você mesmo consiga tomar decisões melhores dentro do seu negócio.`
     },
     {
       question: "Vocês fornecem ferramentas?",
