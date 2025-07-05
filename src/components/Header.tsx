@@ -1,8 +1,6 @@
-
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
-import { ThemeToggle } from "./ThemeToggle";
 
 export const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -34,43 +32,31 @@ export const Header = () => {
             <a href="#sobre" className="text-foreground hover:text-primary transition-colors">Sobre</a>
             <a href="#servicos" className="text-foreground hover:text-primary transition-colors">Serviços</a>
             <a href="#contato" className="text-foreground hover:text-primary transition-colors">Contato</a>
-            <div className="flex items-center space-x-2">
-              <ThemeToggle />
-              <Button 
-                onClick={scrollToForm}
-                className="bg-gradient-to-r from-pink-500 to-orange-400 hover:from-pink-600 hover:to-orange-500"
-              >
-                Solicitar Consultoria
-              </Button>
-            </div>
+            <Button onClick={scrollToForm} className="bg-gradient-to-r from-pink-500 to-purple-500 text-white font-bold">
+              Solicitar Consultoria
+            </Button>
           </nav>
 
-          <div className="md:hidden flex items-center space-x-2">
-            <ThemeToggle />
-            <button 
-              className="md:hidden"
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-            >
-              {isMenuOpen ? <X /> : <Menu />}
-            </button>
-          </div>
+          {/* Mobile menu button */}
+          <button
+            className="md:hidden text-foreground"
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+          >
+            {isMenuOpen ? <X /> : <Menu />}
+          </button>
         </div>
 
+        {/* Mobile menu */}
         {isMenuOpen && (
-          <nav className="md:hidden mt-4 pb-4 border-t border-border pt-4">
-            <div className="flex flex-col space-y-4">
-              <a href="#inicio" className="text-foreground hover:text-primary transition-colors">Início</a>
-              <a href="#sobre" className="text-foreground hover:text-primary transition-colors">Sobre</a>
-              <a href="#servicos" className="text-foreground hover:text-primary transition-colors">Serviços</a>
-              <a href="#contato" className="text-foreground hover:text-primary transition-colors">Contato</a>
-              <Button 
-                onClick={scrollToForm}
-                className="bg-gradient-to-r from-pink-500 to-orange-400 hover:from-pink-600 hover:to-orange-500 w-full"
-              >
-                Solicitar Consultoria
-              </Button>
-            </div>
-          </nav>
+          <div className="md:hidden mt-4 space-y-4">
+            <a href="#inicio" className="block text-foreground hover:text-primary transition-colors">Início</a>
+            <a href="#sobre" className="block text-foreground hover:text-primary transition-colors">Sobre</a>
+            <a href="#servicos" className="block text-foreground hover:text-primary transition-colors">Serviços</a>
+            <a href="#contato" className="block text-foreground hover:text-primary transition-colors">Contato</a>
+            <Button onClick={scrollToForm} className="w-full bg-gradient-to-r from-pink-500 to-purple-500 text-white font-bold">
+              Solicitar Consultoria
+            </Button>
+          </div>
         )}
       </div>
     </header>
