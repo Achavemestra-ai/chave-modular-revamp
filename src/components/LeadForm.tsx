@@ -73,15 +73,7 @@ Meus dados:
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-2xl mx-auto text-white text-center mb-12">
           <motion.h2
-            className="text-4xl md:text-5xl font-bold mb-6"
-            style={{
-              background: 'linear-gradient(-45deg, #ffffff, #f8f8f8, #ffffff)',
-              backgroundSize: '400% 400%',
-              animation: 'gradientShift 8s ease-in-out infinite',
-              WebkitBackgroundClip: 'text',
-              WebkitTextFillColor: 'transparent',
-              backgroundClip: 'text'
-            }}
+            className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-white to-white bg-clip-text text-transparent"
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: false, amount: 0.4 }}
